@@ -95,5 +95,5 @@ CREATE TABLE curtida_avaliacao(
   id_avaliacao int NOT NULL,
   id_usuario int NOT NULL,
   FOREIGN KEY (id_avaliacao) REFERENCES avaliacao(id) ON DELETE CASCADE,
-  FOREIGN KEY (id_usuario) REFERENCES usuario(id) ON DELETE CASCADE
+  FOREIGN KEY (id_usuario) REFERENCES usuario(id) ON DELETE CASCADE
 );
