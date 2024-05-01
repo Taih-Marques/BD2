@@ -209,11 +209,11 @@ try:
 
     # Definindo o número de registros a serem inseridos
     num_registros = {
-        'diretor': 25,
-        'ator': 30,
+        'diretor': 60,
+        'ator': 100,
         'genero': 19,
-        'usuario': 15,
-        'filme': 50
+        'usuario': 50,
+        'filme': 200
     }
 
     # Preenchendo todas as tabelas
