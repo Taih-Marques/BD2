@@ -183,7 +183,7 @@ try:
 
         for usuario_id in range(1, num_registros['usuario'] + 1):
             # Determina o número de avaliações para este usuário
-            num_avaliacoes_usuario = random.randint(1, 30)
+            num_avaliacoes_usuario = random.randint(1, 100)
 
             for _ in range(num_avaliacoes_usuario):
                 # Supondo que existam num_registros filmes na tabela filme
