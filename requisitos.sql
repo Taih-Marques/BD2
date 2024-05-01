@@ -182,28 +182,6 @@ begin
     where usuario.nome = nome and usuario.senha = senha;
 end//
 
--- Procedimento para atualizar o cadastro de um usuário
-create procedure atualiza_cadastro(in id_user int, in novo_nome varchar(100), in nova_senha varchar(20))
-begin
-    update usuario
-    set nome = novo_nome, senha = nova_senha
-    where id = id_user;
-end//
-
--- Procedimento para excluir um usuário e suas avaliações
-create procedure delete_user(in user_id int)
-begin
-    -- Excluir avaliações do usuário
-    delete from avaliacao where id_usuario = user_id;
-    
-    -- Excluir nível de usuário
-    delete from usuario_nivel where id_usuario = user_id;
-    
-    -- Finalmente, excluir o usuário
-    delete from usuario where id = user_id;
-end//
-
-
 -- Cria uma procedure para retornar o ID do filme com base no nome do filme
 create procedure retornIdFilme(IN nome_filme varchar(70))
 begin
