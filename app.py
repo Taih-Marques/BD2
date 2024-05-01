@@ -6,8 +6,8 @@ def conectar():
     return mysql.connector.connect(
         host="localhost",
         user="root",
-        password="",
-        database="pipocando3"
+        password="1234",
+        database="pipocando"
     )
 
 
@@ -245,7 +245,7 @@ def menu_usuario_valido(credencialID):
         print("4 - Fazer avaliação de um filme")
         print("5 - Listar filmes favoritos")
         print("6 - Verificar nível no sistema")
-        print("7 - Veificar detalhes filme")
+        print("7 - Verificar detalhes de um filme")
         print("8 - Listar avaliações de um filme")
         print("9 - Encerrar o programa")
 
