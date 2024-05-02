@@ -363,11 +363,37 @@ begin
     select old.id_genero into genero_id_antigo;
     select new.id_genero into genero_id_novo;
 
-    update qnt_filme_genero
+    update qtd_filmes_genero
     set qtd_filmes = (select count(*) from filme_genero where id_genero = genero_id_antigo)
     where id_genero = genero_id_antigo;
 
-    update qnt_filme_genero
+    update qtd_filmes_genero
     set qtd_filmes = (select count(*) from filme_genero where id_genero = genero_id_novo)
     where id_genero = genero_id_novo;
 end//
+
+DELIMITER $$
+
+CREATE PROCEDURE atualiza_cadastro(IN id_user INT, IN novo_nome VARCHAR(100), IN nova_senha VARCHAR(20))
+BEGIN
+    UPDATE usuario
+    SET nome = novo_nome, senha = nova_senha
+    WHERE id = id_user;
+END$$
+
+DELIMITER ;
+
+-- use pipocando3;
+DELIMITER //
+CREATE PROCEDURE delete_user(IN user_id INT)
+BEGIN
+    -- Excluir avaliações do usuário
+    DELETE FROM avaliacao WHERE id_usuario = user_id;
+    
+    -- Excluir nível de usuário
+    DELETE FROM usuario_nivel WHERE id_usuario = user_id;
+    
+    -- Finalmente, excluir o usuário
+    DELETE FROM usuario WHERE id = user_id;
+END//
+DELIMITER ;
